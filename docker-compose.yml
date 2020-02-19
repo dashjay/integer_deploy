@@ -1,0 +1,29 @@
+version: "2"
+
+networks:
+  int_server:
+    driver: bridge
+
+services:
+  mongo_s:
+    build: ./mongodb
+    container_name: int_mongo
+    command: mongod
+    volumes: 
+      - ./mongodb/db:/data/db
+    ports:
+      - "37017:27017"
+    networks:
+      - int_server
+
+  book_server:
+    build: ./book_server
+    container_name: int_go
+    depends_on: 
+      - mongo_s
+    ports:
+      - "28001:80"
+    networks:
+      - int_server
+  
+  
