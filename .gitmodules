@@ -1,0 +1,3 @@
+[submodule "book_server"]
+	path = book_server
+	url = https://gitee.com/dashjay/book_server.git
