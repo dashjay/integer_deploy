@@ -1,3 +1,6 @@
 [submodule "book_server"]
 	path = book_server
 	url = https://gitee.com/dashjay/book_server.git
+[submodule "gate_server"]
+	path = gate_server
+	url = https://gitee.com/dashjay/GateServer.git
