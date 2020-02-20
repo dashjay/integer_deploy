@@ -1,2 +1,4 @@
 mongodb/db
 .DS_Store
+.idea
+*.db
