@@ -20,6 +20,7 @@ services:
     build: ./book_server
     container_name: int_go
     volumes:
+      - ./book_server:/book_server
       - ./boltdbs:/book_server/boltdbs
     depends_on: 
       - mongo_s
@@ -33,6 +34,7 @@ services:
     build: ./gate_server
     container_name: int_gate
     volumes:
+      - ./gate_server:/gate_server
       - ./boltdbs:/gate_server/boltdbs
     depends_on: 
       - mongo_s
