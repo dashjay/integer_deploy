@@ -4,3 +4,6 @@
 [submodule "gate_server"]
 	path = gate_server
 	url = https://gitee.com/dashjay/GateServer.git
+[submodule "identification"]
+	path = identification
+	url = https://gitee.com/dashjay/identification.git

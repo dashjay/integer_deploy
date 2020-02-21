@@ -9,7 +9,7 @@ services:
     build: ./mongodb
     container_name: int_mongo
     command: mongod
-    volumes: 
+    volumes:
       - ./mongodb/db:/data/db
     ports:
       - "37017:27017"
@@ -22,7 +22,7 @@ services:
     volumes:
       - ./book_server:/book_server
       - ./boltdbs:/book_server/boltdbs
-    depends_on: 
+    depends_on:
       - mongo_s
       - redis_server
     ports:
@@ -36,18 +36,26 @@ services:
     volumes:
       - ./gate_server:/gate_server
       - ./boltdbs:/gate_server/boltdbs
-    depends_on: 
+    depends_on:
       - mongo_s
       - redis_server
-    ports: 
+    ports:
       - "28002:80"
-    networks: 
+    networks:
       - int_server
 
   redis_server:
-    image: redis:latest
+    image: redis:alpine
     container_name: int_redis
-    networks: 
+    networks:
       - int_server
-  
-  
+
+  id_server:
+    build: ./identification
+    container_name: id_server
+    volumes:
+      - ./identification:/id
+    ports:
+      - "12480:80"
+    networks:
+      - int_server
