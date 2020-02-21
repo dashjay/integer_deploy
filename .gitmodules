@@ -7,3 +7,6 @@
 [submodule "identification"]
 	path = identification
 	url = https://gitee.com/dashjay/identification.git
+[submodule "love_server"]
+	path = love_server
+	url = https://gitee.com/dashjay/SayLoveBlockChain.git
