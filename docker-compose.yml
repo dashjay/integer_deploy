@@ -56,6 +56,16 @@ services:
     volumes:
       - ./identification:/id
     ports:
-      - "12480:80"
+      - "28003:80"
+    networks:
+      - int_server
+
+  love_server:
+    build: ./love_server
+    container_name: love_server
+    volumes:
+      - ./love_server:/love_server
+    ports:
+      - "28004:80"
     networks:
       - int_server
