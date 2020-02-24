@@ -69,3 +69,14 @@ services:
       - "28004:80"
     networks:
       - int_server
+
+  auth_server:
+    build: ./auth_server
+    container_name: auth_server
+    volumes:
+      - ./auth_server:/auth_server
+      - ./boltdbs:/auth_server/boltdbs
+    ports:
+      - "28005:80"
+    networks:
+      - int_server
